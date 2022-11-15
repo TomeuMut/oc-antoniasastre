@@ -1,0 +1,10 @@
+name: Persons
+form: $/bmut/antsastre/models/person/fields.yaml
+modelClass: Bmut\Antsastre\Models\Person
+defaultRedirect: bmut/antsastre/persons
+create:
+    redirect: 'bmut/antsastre/persons/update/:id'
+    redirectClose: bmut/antsastre/persons
+update:
+    redirect: bmut/antsastre/persons
+    redirectClose: bmut/antsastre/persons

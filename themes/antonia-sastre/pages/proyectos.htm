@@ -1,0 +1,132 @@
+title = "Projects"
+url = "/projects"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[En] = "/projects"
+localeUrl[Cat] = "/projects"
+==
+<?php
+use bmut\antsastre\Models\Project;
+
+
+
+function onStart(){
+
+
+
+$this['projects'] = Project::orderBy('id','desc')->get();
+
+}
+?>
+==
+{% for project in projects %}
+
+{% if loop.first %}
+
+<main class="scrollreveal">
+
+        <div class="margeRelSuperiorM">
+
+            <div class="fotoFonsFull" style="background-image:url('{{project.gallery.getPath()}}')">
+
+                <div class="wrapper margeRelSuperiorL textBlanc">
+
+                    <div class="ample60">
+
+                        <h1>{{project.title}}</h1>
+
+                        <p class="ample40">{{project.description|slice(0,120)|raw}}</p>
+
+                        <a href="{{'detalleproyecto' |page({slug: project.slug})}}"><i class="material-icons">add</i></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    {% else %}
+
+    {% if project.id % 2 == 0 %}
+
+    <aside class="llistatProjecte scrollreveal">
+
+        <div class="llistatFoto">
+
+            <picture>
+
+              <source srcset="{{project.principal_image_small.getPath()}}" media="(max-width: 420px)">
+
+              <source srcset="{{project.principal_image_medium.getPath()}}" media="(max-width: 1024px)">
+
+              <source srcset="{{project.principal_image.getPath()}}">
+
+              <img srcset="{{project.principal_image.getPath()}}" alt="Descripcio">
+
+          </picture>
+
+        </div>
+
+        <div class="llistatText alinearVerticalPare">
+
+            <div class="alinearVerticalFill">
+
+                <h2>{{project.title}}</h2>
+
+                <p>{{project.description}}</p>
+
+                <a href="{{'detalleproyecto' |page({slug: project.slug})}}"><i class="material-icons">add</i></a>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    {% else %}
+
+    <aside class="llistatProjecte invertit scrollreveal">
+
+        <div class="llistatFoto">
+
+            <picture>
+
+              <source srcset="{{project.principal_image_small.getPath()}}" media="(max-width: 420px)">
+
+              <source srcset="{{project.principal_image_medium.getPath()}}" media="(max-width: 1024px)">
+
+              <source srcset="{{project.principal_image.getPath()}}">
+
+              <img srcset="{{project.principal_image.getPath()}}" alt="Descripcio">
+
+          </picture>
+
+        </div>
+
+        <div class="llistatText alinearVerticalPare">
+
+            <div class="alinearVerticalFill">
+
+                <h2>{{project.title}}</h2>
+
+                <p>{{project.description}}</p>
+
+                <a href="{{'detalleproyecto' |page({slug: project.slug})}}"><i class="material-icons">add</i></a>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    {% endif %}
+
+    {% endif %}
+
+    {% endfor %}

@@ -1,0 +1,62 @@
+title = "nosotros"
+url = "/nosotros"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[En] = "/nosotros"
+localeUrl[Cat] = "/nosotros"
+==
+<?php
+
+use bmut\antsastre\Models\Person;
+
+function onStart(){
+
+$this['persons'] = Person::get();
+}
+?>
+==
+<article class="margeRelSuperiorXl margeInferiorL bordeInferior scrollreveal">
+        <div class="wrapper">
+            <div class="ample60">
+                <h1>{{'nosotros'|_}}</h1>
+                <p>{{'nosotros_desc'|_}}</p>
+            </div>
+        </div>
+    </article>
+{% for person in persons %}
+{% if loop.first%}
+<article class="margeSuperiorXl margeInferiorXl bordeInferior scrollreveal">
+    <div class="wrapper">
+        <picture>
+            <source srcset="{{person.employe_photo_small.getPath()}}" media="(max-width: 420px)">
+            <source srcset="{{person.employe_photo_med.getPath()}}" media="(max-width: 1024px)">
+            <source srcset="{{person.employe_photo.getPath()}}">
+            <img srcset="{{person.employe_photo.getPath()}}" alt="Descripcio" class="imgJefa">
+        </picture>
+        <div class="empleatTxt">
+            <h1 class="margeSuperiorS">{{person.name}}</h1>
+            <p>{{person.description}}</p>
+            <a href="{{person.linkedin}}" target="_new">linkedIn</a>
+        </div>
+    </div>
+</article>
+{% else %}
+<article class="margeSuperiorXl margeInferiorXl bordeInferior scrollreveal">
+    <div class="wrapper">
+        <picture>
+            <source srcset="{{person.employe_photo_small.getPath()}}" media="(max-width: 420px)">
+            <source srcset="{{person.employe_photo_med.getPath()}}" media="(max-width: 1024px)">
+            <source srcset="{{person.employe_photo.getPath()}}">
+            <img srcset="{{person.employe_photo.getPath()}}" alt="Descripcio" class="imgEmpleat">
+        </picture>
+        <div class="empleatTxt">
+            <h1 class="margeSuperiorS">{{person.name}}</h1>
+            <p>{{person.description}}</p>
+            <a href="{{person.linkedin}}" target="_new">linkedIn</a>
+        </div>
+    </div>
+</article>
+{% endif %}
+{% endfor %}

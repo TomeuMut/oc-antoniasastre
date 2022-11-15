@@ -1,0 +1,47 @@
+title = "contacto"
+url = "/contacto"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[En] = "/contacto"
+localeUrl[Cat] = "/contacto"
+
+[form]
+==
+<?php
+use bmut\antsastre\Models\Info;
+
+function onStart(){
+
+$this['info'] = Info::get()->first();
+}
+?>
+==
+<article class="margeRelSuperiorXl margeInferiorL bordeInferior scrollreveal">
+        <div class="wrapper">
+            <div class="ample60">
+                <h1>{{'Titulo Formulario'|_}}</h1>
+            </div>
+        </div>
+    </article>
+    <article class="margeSuperiorL margeInferiorL bordeInferior scrollreveal">
+        <div class="wrapper">
+            <ul>
+                <li>Antonia Sastre + Partners</li>
+                <li>{{info.street}}</li>
+                <li>{{info.postal_code}} - {{info.city}}</li>
+                <li>{{info.province}}, {{info.country}}</li>
+                <li>{{info.telf}}</li>
+            </ul>
+        </div>
+    </article>
+    <article class="margeSuperiorL margeInferiorL bordeInferior scrollreveal">
+        <div class="wrapper">
+            <div class="ample60">
+                <h2>{{'Formulario de contacto'|_}}</h2>
+                <p>{{'Descripcion Formulario'|_}}</p>
+                {% component 'form' %}
+            </div>
+        </div>
+    </article>

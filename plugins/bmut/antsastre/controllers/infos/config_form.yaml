@@ -1,0 +1,10 @@
+name: Infos
+form: $/bmut/antsastre/models/info/fields.yaml
+modelClass: Bmut\Antsastre\Models\Info
+defaultRedirect: bmut/antsastre/infos
+create:
+    redirect: 'bmut/antsastre/infos/update/:id'
+    redirectClose: bmut/antsastre/infos
+update:
+    redirect: bmut/antsastre/infos
+    redirectClose: bmut/antsastre/infos

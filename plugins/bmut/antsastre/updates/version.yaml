@@ -1,0 +1,29 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table bmut_antsastre_projects'
+    - builder_table_create_bmut_antsastre_projects.php
+1.0.3:
+    - 'Updated table bmut_antsastre_projects'
+    - builder_table_update_bmut_antsastre_projects.php
+1.0.4:
+    - 'Created table bmut_antsastre_persons'
+    - builder_table_create_bmut_antsastre_persons.php
+1.0.5:
+    - 'Created table bmut_antsastre_servicios'
+    - builder_table_create_bmut_antsastre.php
+1.0.6:
+    - 'Updated table bmut_antsastre_projects'
+    - builder_table_update_bmut_antsastre_projects2.php
+1.0.7:
+    - 'Updated table bmut_antsastre_infos'
+    - builder_table_update_bmut_antsastre_infos.php
+1.0.8:
+    - 'Updated table bmut_antsastre_moduls'
+    - builder_table_update_bmut_antsastre_moduls.php
+1.0.9:
+    - 'Updated table bmut_antsastre_moduls'
+    - builder_table_update_bmut_antsastre_moduls_2.php
+1.0.10:
+    - 'Drop table bmut_antsastre_modul_project'
+    - builder_table_delete_bmut_antsastre_modul_project.php

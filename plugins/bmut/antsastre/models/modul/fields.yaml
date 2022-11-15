@@ -1,0 +1,164 @@
+fields:
+    type:
+        label: 'Selecciona Modulo'
+        options:
+            A: A
+            B: B
+            C: C
+            D: D
+            E: E
+        span: full
+        type: dropdown
+    descripcion_a:
+        label: 'Descripcion A'
+        size: huge
+        span: auto
+        trigger:
+            action: show
+            field: type
+            condition: 'value[A]'
+        type: textarea
+    descripcion_a2:
+        label: 'Descripcion 2 A'
+        size: huge
+        span: auto
+        trigger:
+            action: show
+            field: type
+            condition: 'value[A]'
+        type: textarea
+    img_slider_B:
+        label: Slider
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        trigger:
+            action: show
+            field: type
+            condition: 'value[B]'
+        type: fileupload
+    img_slider_B_med:
+        label: 'Slider Imatges Med'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        trigger:
+            action: show
+            field: type
+            condition: 'value[B]'
+        type: fileupload
+    img_slider_B_small:
+        label: 'Imatges Slider Small'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        trigger:
+            action: show
+            field: type
+            condition: 'value[B]'
+        type: fileupload
+    descripcion_c:
+        label: 'Descripcion C'
+        size: huge
+        span: full
+        trigger:
+            action: show
+            field: type
+            condition: 'value[C]'
+        type: textarea
+    img_C:
+        label: 'Imagen Modulo C'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: right
+        trigger:
+            action: show
+            field: type
+            condition: 'value[C]'
+        type: fileupload
+    img_C_med:
+        label: 'Imatge Modul C Med'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        trigger:
+            action: show
+            field: type
+            condition: 'value[C]'
+        type: fileupload
+    img_C_small:
+        label: 'Imatge Modul C Small'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        trigger:
+            action: show
+            field: type
+            condition: 'value[C]'
+        type: fileupload
+    descripcion_d:
+        label: 'Descripcion D'
+        size: huge
+        span: full
+        trigger:
+            action: show
+            field: type
+            condition: 'value[D]'
+        type: textarea
+    img_E:
+        label: 'Imagen Modulo E'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        trigger:
+            action: show
+            field: type
+            condition: 'value[E]'
+        type: fileupload
+    img_E_med:
+        label: 'Imatge Modul E Medium'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        trigger:
+            action: show
+            field: type
+            condition: 'value[E]'
+        type: fileupload
+    img_E_small:
+        label: 'Imatge Modul E Small'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        trigger:
+            action: show
+            field: type
+            condition: 'value[E]'
+        type: fileupload

@@ -1,0 +1,10 @@
+name: Services
+form: $/bmut/antsastre/models/servicio/fields.yaml
+modelClass: Bmut\Antsastre\Models\Servicio
+defaultRedirect: bmut/antsastre/services
+create:
+    redirect: 'bmut/antsastre/services/update/:id'
+    redirectClose: bmut/antsastre/services
+update:
+    redirect: bmut/antsastre/services
+    redirectClose: bmut/antsastre/services

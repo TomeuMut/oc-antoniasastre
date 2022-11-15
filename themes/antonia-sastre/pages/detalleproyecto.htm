@@ -1,0 +1,100 @@
+title = "Projects"
+url = "/projects/:slug"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[En] = "/projects/:slug"
+localeUrl[Cat] = "/projects/:slug"
+==
+<?php
+use bmut\antsastre\Models\Project;
+use bmut\antsastre\Models\Modul;
+
+function onStart(){
+    $slug = $this->param('slug');
+    $this['project'] = Project::where('slug',$slug)->first();
+    $project_id=$this['project']->id;
+    $this['modules'] = Modul::where('project_id',$project_id)->get();
+    
+}
+?>
+==
+<div class="modul-1 margeRelSuperiorXl scrollreveal">
+        <div class="wrapper">
+            <h1 class="ample60">{{project.title}}</h1>
+            <h2 class="ample60">{{project.description}}</h2>
+        </div>
+    </div>
+{% for modul in modules %}
+
+    {% if modul.type == 'A' %}
+
+    <div class="modul-2 scrollreveal">
+        <div class="margeSuperiorL">
+            <div class="wrapper flexContainer">
+                <div class="ample50">
+                    <p>{{modul.descripcion_a}}</p>
+                </div>
+                <div class="detalls">
+                    {{modul.descripcion_a2 | raw}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% elseif modul.type == 'B' %}
+
+    <div class="modul-5 margeSuperiorL margeInferiorL scrollreveal wrapper">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for img_B in  modul.img_slider_B %}
+                <div class="swiper-slide">
+                    <picture>
+                        <source srcset="{{modul.img_slider_B_small[loop.index0].getPath()}}" media="(max-width: 420px)">
+                        <source srcset="{{modul.img_slider_B_med[loop.index0].getPath()}}" media="(max-width: 1024px)">
+                        <source srcset="{{img_B.getPath()}}">
+                        <img srcset="{{img_B.getPath()}}" alt="Descripcio">
+                    </picture>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {% elseif modul.type == 'C' %}
+
+    <div class="modul-6 margeSuperiorL margeInferiorL scrollreveal">
+    <div class="wrapper flexContainer flexText">
+        <div class="txt">
+            <p>{{modul.descripcion_c}}</p>
+        </div>
+        <picture>
+            <source srcset="{{modul.img_C_small.getPath()}}" media="(max-width: 420px)">
+            <source srcset="{{modul.img_C_med.getPath()}}" media="(max-width: 1024px)">
+            <source srcset="{{modul.img_C.getPath()}}">
+            <img srcset="{{modul.img_C.getPath()}}" alt="Descripcio">
+        </picture>
+    </div>
+</div>
+
+    {% elseif modul.type == 'D' %}
+        <div class="modul-3 margeSuperiorL scrollreveal">
+            <div class="wrapper">
+              <h2>{{modul.descripcion_d}}</h2>
+            </div>
+        </div>
+
+    {% elseif modul.type == 'E' %}
+    <div class="modul-4 margeSuperiorL scrollreveal">
+    <picture>
+        <source srcset="{{modul.img_E_small.getPath()}}" media="(max-width: 420px)">
+        <source srcset="{{modul.img_E_med.getPath()}}" media="(max-width: 1024px)">
+        <source srcset="{{modul.img_E.getPath()}}">
+        <img srcset="{{modul.img_E.getPath()}}" alt="Descripcio" class="imgFull scrollreveal">
+    </picture>
+  </div>
+
+    {% endif %}
+
+{% endfor%}

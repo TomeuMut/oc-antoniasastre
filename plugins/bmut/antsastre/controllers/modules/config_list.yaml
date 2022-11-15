@@ -1,0 +1,12 @@
+list: $/bmut/antsastre/models/modul/columns.yaml
+modelClass: Bmut\Antsastre\Models\Modul
+title: Modules
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'bmut/antsastre/modules/update/:id'

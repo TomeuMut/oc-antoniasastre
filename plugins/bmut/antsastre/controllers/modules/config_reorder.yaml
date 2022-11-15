@@ -1,0 +1,9 @@
+title: Modules
+
+modelClass: bmut\antsastre\Models\Modules
+
+nameFrom: sort_order
+
+toolbar:
+  
+    buttons: reorder_toolbar

@@ -1,0 +1,10 @@
+name: Modules
+form: $/bmut/antsastre/models/modul/fields.yaml
+modelClass: Bmut\Antsastre\Models\Modul
+defaultRedirect: bmut/antsastre/modules
+create:
+    redirect: 'bmut/antsastre/modules/update/:id'
+    redirectClose: bmut/antsastre/modules
+update:
+    redirect: bmut/antsastre/modules
+    redirectClose: bmut/antsastre/modules

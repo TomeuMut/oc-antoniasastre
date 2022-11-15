@@ -1,0 +1,10 @@
+name: Projects
+form: $/bmut/antsastre/models/project/fields.yaml
+modelClass: Bmut\Antsastre\Models\Project
+defaultRedirect: bmut/antsastre/projects
+create:
+    redirect: 'bmut/antsastre/projects/update/:id'
+    redirectClose: bmut/antsastre/projects
+update:
+    redirect: bmut/antsastre/projects
+    redirectClose: bmut/antsastre/projects

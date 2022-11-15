@@ -1,0 +1,41 @@
+fields:
+    name:
+        label: Nom
+        span: auto
+        type: text
+    linkedin:
+        label: Linkedin
+        span: auto
+        type: text
+    description:
+        label: Descripción
+        size: huge
+        span: auto
+        type: textarea
+    employe_photo:
+        label: 'Foto Empleat'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    employe_photo_med:
+        label: 'Foto Empleat Med'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    employe_photo_small:
+        label: 'Foto Empleat Small'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

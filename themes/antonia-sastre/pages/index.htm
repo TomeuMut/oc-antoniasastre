@@ -1,0 +1,144 @@
+title = "index"
+url = "/"
+layout = "default"
+is_hidden = 0
+==
+<?php
+use bmut\antsastre\Models\Project;
+
+use bmut\antsastre\Models\Info;
+
+
+
+function onStart(){
+
+
+
+$this['projects'] = Project::orderBy('id','desc')->get();
+
+$this['info'] = Info::get()->first();
+
+
+
+}
+?>
+==
+<main class="bordeInferior">
+
+        <article class="wrapper">
+
+            <div class="ample60 margeRelSuperiorXl">
+
+                <h1>{{'Titulo Home'|_}}</h1>
+
+            </div>
+
+        </article>
+
+        <picture class="imgFull">
+
+          <source srcset="{{info.home_photo_small.getPath()}}" media="(max-width: 420px)">
+
+          <source srcset="{{info.home_photo_small.getPath()}}" media="(max-width: 1024px)">
+
+          <source srcset="{{info.home_photo.getPath()}}">
+
+          <img srcset="{{info.home_photo.getPath()}}" alt="Descripcio">
+
+      </picture>
+
+        <article class="wrapper scrollreveal">
+
+            <div class="about ample60 margeSuperiorXl margeInferiorXl">
+
+                <h6>{{'Sobre Nosotros'|_}}</h6>
+
+                <h2>{{'Sobre Nosotros Subtitulo'|_}}</h2>
+
+                <p>{{'Sobre Nosotros Descripcion'|_}}</p>
+
+                <a href="{{'nosotros' | page }}"><i class="material-icons">add</i></a>
+
+            </div>
+
+        </article>
+
+    </main>
+
+    {% for project in projects %}
+
+    {% if project.id % 2 == 0 %}
+
+    <aside class="llistatProjecte invertit scrollreveal">
+
+        <div class="llistatFoto">
+
+            <picture>
+
+              <source srcset="{{project.principal_image_small.getPath()}}" media="(max-width: 420px)">
+
+              <source srcset="{{project.principal_image_medium.getPath()}}" media="(max-width: 1024px)">
+
+              <source srcset="{{project.principal_image.getPath()}}">
+
+              <img srcset="{{project.principal_image.getPath()}}" alt="Descripcio">
+
+          </picture>
+
+        </div>
+
+        <div class="llistatText alinearVerticalPare">
+
+            <div class="alinearVerticalFill">
+
+                <h2>{{project.title}}</h2>
+
+                <p>{{project.description|slice(0,150)|raw}}</p>
+
+                <a href="{{'detalleproyecto' |page({slug: project.slug})}}"><i class="material-icons">add</i></a>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    {% else %}
+
+    <aside class="llistatProjecte scrollreveal">
+
+        <div class="llistatFoto">
+
+            <picture>
+
+                <source srcset="{{project.principal_image_small.getPath()}}" media="(max-width: 420px)">
+
+                <source srcset="{{project.principal_image_medium.getPath()}}" media="(max-width: 1024px)">
+
+                <source srcset="{{project.principal_image.getPath()}}">
+
+                <img srcset="{{project.principal_image.getPath()}}" alt="Descripcio">
+
+            </picture>
+
+        </div>
+
+        <div class="llistatText alinearVerticalPare">
+
+            <div class="alinearVerticalFill">
+
+                <h2>{{project.title}}</h2>
+
+                <p>{{project.description|slice(0,150)|raw}}</p>
+
+                <a href="{{'detalleproyecto' |page({slug: project.slug})}}"><i class="material-icons">add</i></a>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    {% endif %}
+
+    {% endfor %}

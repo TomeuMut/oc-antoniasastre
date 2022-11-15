@@ -1,0 +1,11 @@
+columns:
+    title:
+        label: Titulo
+        type: text
+        searchable: true
+        sortable: true
+    description:
+        label: Descripción
+        type: text
+        searchable: true
+        sortable: true

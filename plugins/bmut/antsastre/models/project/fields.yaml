@@ -1,0 +1,58 @@
+fields:
+    title:
+        label: Titulo
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    description:
+        label: Descripción
+        size: huge
+        span: full
+        type: textarea
+    principal_image:
+        label: 'Imatge Principal'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        type: fileupload
+    principal_image_medium:
+        label: 'Imatge Principal Med'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    principal_image_small:
+        label: 'Imatge Principal Small'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    gallery:
+        label: Galeria
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    modules:
+        span: full    
+        path: field_module
+        type: partial    
+

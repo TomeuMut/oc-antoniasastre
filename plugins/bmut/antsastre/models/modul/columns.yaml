@@ -1,0 +1,11 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+    type:
+        label: 'Tipo Modulo'
+        type: text
+        searchable: true
+        sortable: true

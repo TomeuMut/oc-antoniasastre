@@ -1,0 +1,15 @@
+modules: 
+
+  label: Modules
+
+  view: 
+
+    list: $/bmut/antsastre/models/modul/columns.yaml
+
+    toolbarButtons: create|add|remove  
+
+  manage: 
+
+    form:  $/bmut/antsastre/models/modul/fields.yaml
+
+    showCheckboxes: true

@@ -1,0 +1,37 @@
+title = "servicios"
+url = "/servicios"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[En] = "/servicios"
+localeUrl[Cat] = "/servicios"
+
+==
+
+<?php
+
+use bmut\antsastre\Models\Servicio;
+
+function onStart(){
+
+$this['services'] = Servicio::get();
+}
+?>
+==
+<article class="margeRelSuperiorXl margeInferiorL bordeInferior scrollreveal">
+    <div class="wrapper">
+        <div class="ample60">
+            <h1>{{'Servicios'|_}}</h1>
+        </div>
+    </div>
+</article>
+{% for service in services %}
+<article class="margeSuperiorXl margeInferiorXl bordeInferior scrollreveal">
+    <div class="wrapper">
+        <div class="ample60">
+            {{service.description|raw}}
+        </div>
+    </div>
+</article>
+{% endfor %}

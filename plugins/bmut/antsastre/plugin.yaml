@@ -1,0 +1,27 @@
+plugin:
+    name: 'bmut.antsastre::lang.plugin.name'
+    description: 'bmut.antsastre::lang.plugin.description'
+    author: Bmut
+    icon: oc-icon-bank
+    homepage: ''
+navigation:
+    Proyectos:
+        label: Proyectos
+        url: bmut/antsastre/projects
+        icon: icon-building
+    Personal:
+        label: Nosotros
+        url: bmut/antsastre/persons
+        icon: icon-group
+    Servicios:
+        label: Servicios
+        url: bmut/antsastre/services/
+        icon: icon-book
+    Info:
+        label: info
+        url: bmut/antsastre/infos/update/1
+        icon: icon-exclamation-circle
+    main-menu-item:
+        label: Modules
+        url: bmut/antsastre/modules
+        icon: icon-life-ring

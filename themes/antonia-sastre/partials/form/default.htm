@@ -1,0 +1,18 @@
+
+<form method="post" data-request="onSend" data-request-flash>
+    <input type="text" placeholder="Tu Nombre" name="name" required>
+    <input type="tel" placeholder="Tu número de teléfono" name="phone" required>
+    <input type="email" placeholder="Tu Email" name="email">
+    <input type="tel" placeholder="Asunto del mensaje" name="subject">
+    <textarea placeholder="Descripción de la consulta" name="consult"></textarea>
+    <div class="flexContainer">
+        <div>
+            <p class="textPetit">
+                {{'texto_avisolegal'|_}} <a href="{{'aviso-legal'|page}}" target="_new">{{'link_avisolegal'|_}}</a>.
+            </p>
+        </div>
+        <div>
+            <input type="submit" class="boto">
+        </div>
+    </div>
+</form>

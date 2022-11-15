@@ -1,0 +1,50 @@
+==
+<footer class="scrollreveal">
+    <ul>
+        <li><a href="#">Instagram</a> <a href="#">LinkedIn</a></li>
+        <li>© Antònia Sastre + Partners </li>
+        <li><a href="{{'aviso-legal' | page}}">Aviso legal</a></li>
+    </ul>
+</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.4/scrollreveal.min.js"></script>
+
+  <script>
+      $(document).ready(function() {
+          ScrollReveal().reveal('.scrollreveal', {
+              delay: 250,
+              duration: 600,
+              easing: 'ease-in'
+          });
+          $("#burgerMenu, #burgerMenu2, #closeMenu").click(function() {
+              $("nav").fadeToggle();
+          });
+          
+          var mySwiper = new Swiper('.swiper-container', {
+                autoplay: {
+                    delay: 3000,
+                },
+                keyboard: true,
+                loop: true,
+                effect: 'fade',
+                speed: 500,
+            });
+      });
+
+
+
+
+      $(window).scroll(function() {
+          var height = $(window).scrollTop();
+
+          if (height > 200) {
+              $("#sticky").fadeIn();
+          }
+          if (height < 200) {
+              $("#sticky").fadeOut();
+          }
+      });
+
+  </script>

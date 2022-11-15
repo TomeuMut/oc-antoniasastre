@@ -1,0 +1,28 @@
+title = "aviso-legal"
+url = "/aviso-legal"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[En] = "/aviso-legal"
+localeUrl[Cat] = "/aviso-legal"
+
+==
+<?php
+use bmut\antsastre\Models\Info;
+
+function onStart(){
+
+$this['info'] = Info::get()->first();
+}
+?>
+==
+
+<article class="margeSuperiorXl margeInferiorXl bordeInferior scrollreveal">
+        <div class="wrapper">
+            <div class="ample60">
+                <h2>{{info.title}}</h2>
+                <p>{{info.text}}</p>
+            </div>
+        </div>
+    </article>

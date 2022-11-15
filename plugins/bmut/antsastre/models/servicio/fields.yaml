@@ -1,0 +1,10 @@
+fields:
+    title:
+        label: 'Titulo del Servicio'
+        span: full
+        type: text
+    description:
+        label: 'Descripción del Servicio'
+        size: huge
+        span: full
+        type: richeditor

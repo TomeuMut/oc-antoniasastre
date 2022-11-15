@@ -1,0 +1,61 @@
+fields:
+    home_photo:
+        label: 'Imatge Home'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    home_photo_med:
+        label: 'Imatge Home Med'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    home_photo_small:
+        label: 'Imatge Home Small'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    title:
+        label: Titulo
+        span: full
+        type: text
+    text:
+        label: Texto
+        size: huge
+        span: full
+        type: textarea
+    street:
+        label: Carrer
+        span: auto
+        type: text
+    postal_code:
+        label: 'Codi Postal'
+        span: auto
+        type: text
+    city:
+        label: Poble/Ciutat
+        span: auto
+        type: text
+    province:
+        label: Provincia
+        span: auto
+        type: text
+    country:
+        label: Pais
+        span: auto
+        type: text
+    telf:
+        label: Telefón
+        span: auto
+        type: text

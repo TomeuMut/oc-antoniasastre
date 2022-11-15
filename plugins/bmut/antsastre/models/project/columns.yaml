@@ -1,0 +1,16 @@
+columns:
+    id:
+        label: 'ID Proyecto'
+        type: number
+        searchable: true
+        sortable: true
+    title:
+        label: 'Titulo Proyecto'
+        type: text
+        searchable: true
+        sortable: true
+    description:
+        label: 'Descripcion Proyecto'
+        type: text
+        searchable: true
+        sortable: true
